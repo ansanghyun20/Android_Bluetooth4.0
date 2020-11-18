@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6a6a6a">
+        <Button
+            android:id="@+id/back2"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textColor="@color/colorWhite"
+            android:background="#6a6a6a"
+            android:text="←" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_main_label"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="검색할 날짜와 시간을 입력하세요. " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText_main_searchKeyword1"
+            android:layout_width="0dp"
+            android:layout_weight="0.35"
+            android:hint="위치"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/editText_main_searchKeyword2"
+            android:layout_width="0dp"
+            android:layout_weight="0.35"
+            android:hint="날짜"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/button_main_search"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="match_parent"
+            android:text="Search" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="OnClickHandler"
+        android:datePickerMode="calendar"
+        android:text="날짜 선택"
+        tools:ignore="OnClick" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="15dp"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="장소"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="날짜"/>
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="시간"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="온도"/>
+
+    </LinearLayout>
+
+
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:id="@+id/listView_main_list"/>
+
+
+    <TextView
+        android:id="@+id/textView_main_result"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+ />
+
+
+</LinearLayout>
