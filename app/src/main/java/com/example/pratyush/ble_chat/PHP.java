@@ -58,7 +58,7 @@ public class PHP extends Activity {
     private TextView temp_sensor;
     private TextView locatetext;
     Button modify;
-
+    // 사이드바 배열을 위한 어레이 리스트
     ArrayAdapter<String> adapter;
     ArrayList<String> array = new ArrayList<>();
     private static final String SETTINGS_PLAYER_JSON = "settings_item_json";
@@ -69,9 +69,10 @@ public class PHP extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_php);
 
-
+        //Drawer에 List에 JSon 내용을 가져옴 ( 꺼도 저장되는 기능 함수는 아래에 정의 되어 있다. )
         array = getStringArrayPref(getApplicationContext(), SETTINGS_PLAYER_JSON);
-
+        
+        //DrawerLayout 연결
         final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         final View drawerView = (View) findViewById(R.id.drawer);
 
@@ -107,12 +108,15 @@ public class PHP extends Activity {
         temp_sensor.setText(sensor);
         temp_inspec.setText(result);
         array = getStringArrayPref(getApplicationContext(), SETTINGS_PLAYER_JSON);
-
+        
+        //array와 레이아웃의 어댑터
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, array);
 
         /*final ArrayList<String> items = new ArrayList<String>();
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, items);*/
-
+        
+        
+        // 리스트뷰를 생성하고 adapter와 연결한다. array를 보여주기위한 과정인듯
         final ListView listview = (ListView) findViewById(R.id.listview1);
         listview.setAdapter(adapter);
 
@@ -124,7 +128,7 @@ public class PHP extends Activity {
                 String vo = (String) adapterView.getAdapter().getItem(i);  //리스트뷰의 포지션 내용을 가져옴.
                 String str = array.get(i);
                 locate_text=vo;
-                locatetext.setText(vo);
+                locatetext.setText(vo);    //드로어 밖의 장소를 지칭하는 부분에 값을 채워 넣는다.
             }
         });
 
@@ -323,9 +327,9 @@ public class PHP extends Activity {
         }
         return urls;
     }
-
+    
     @Override
-    protected void onPause() {
+    protected void onPause() {  // 앱을 일시 정지 했을 때 set String Array로 Sharedpre 를 통해 JSon으로 저장되고 자료를 지워지지 않게 둠
         super.onPause();
 
         setStringArrayPref(getApplicationContext(), SETTINGS_PLAYER_JSON, array);
