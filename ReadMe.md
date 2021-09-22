@@ -9,7 +9,7 @@
 맞추어 진행하였습니다.
 ```
 
-# 1. 첫 화면
+# 1. 첫 화면 
 
 <img width="271" alt="image" src="https://user-images.githubusercontent.com/62547169/122842972-59e97200-d339-11eb-9b75-843b2f42c55c.png">
 
