@@ -68,6 +68,7 @@ SharedPreferences ArrayList를 이용하여 리스트를 저장하여 앱
  <img width="445" alt="image" src="https://user-images.githubusercontent.com/62547169/122843102-aaf96600-d339-11eb-9ee6-0e21d9817793.png">
 
 ```
+Java 1.8
 안드로이드 스튜디오를 사용하였습니다.
 ```
 　 
@@ -75,6 +76,7 @@ SharedPreferences ArrayList를 이용하여 리스트를 저장하여 앱
 
 
 ```
+PHP7
 PHP 웹 서버를 이용 하였습니다.
 ```
 　          
